@@ -19,7 +19,7 @@ Here's my installation (although not exactly sequential):
 * SdkMan
 * JDK7, JDK8, JDK11
 * 'htop' (process viewer)
-* I build and installed 'fakeroot-tcp'
+* I built and installed 'fakeroot-tcp'
 * ... which allows me to build and install other packaged
 * ... Jed (editor)
 * ... 'yay' (package manager)
@@ -31,6 +31,20 @@ Here's my installation (although not exactly sequential):
 * I duplicated the 'libsunec.so' native library from JDK8 to JDK7, which hasn't blown up yet.
 
 NOTE: The ability to an drop unsigned encryption library into the JRE without complaint was more than a bit surprising. Although this required file-system access, this seems like a bit of a security vulnerability to me.
+
+* Clone and build `git-cinnabar` extension:
+  * `git clone https://github.com/glandium/git-cinnabar.git`
+  * `cd git-cinnabar`
+  * `make`
+  * Add `git-cinnabar` folder to the **PATH**
+* Install LLVM and CLang
+  * `pacman -S llvm`
+  * `pacman -S llvm-libs`
+  * `pacman -S clang`
+  * `pacman -S libffi`
+  * ... (others will be encountered building Mozilla Central)
+* Clone the Mozilla Central repository:
+  * `git clone hg::https://hg.mozilla.org/mozilla-central`
 
 ## Hardware/Accessories
 * LG Velvet (LM-G900TM)

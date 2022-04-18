@@ -23,8 +23,10 @@ Here's my installation (although not exactly sequential):
   * `sudo pacman -S base-devel`
 * Install scripts (includes 'chroot')
   * `sudo pacman -S arch-install-scripts`
-* Xfce4 (desktop environment)
+* Install Xfce4 (desktop environment)
   * `sudo pacman -S xfce4`
+* Install TigerVNC:
+  * `sudo pacman -S tigervnc`
 * Jump Desktop (VNC client)
 * CodeBoard (on-screen keyboard)
 * Eclipse (Java IDE)

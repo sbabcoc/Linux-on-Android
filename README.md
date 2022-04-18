@@ -35,7 +35,7 @@ Here's my installation (although not exactly sequential):
 * ... which I dropped into the jre/lib/ext folder of java-7-openjdk
 * I duplicated the 'libsunec.so' native library from JDK8 to JDK7, which hasn't blown up yet.
 
-NOTE: The ability to an drop unsigned encryption library into the JRE without complaint was more than a bit surprising. Although this required file-system access, this seems like a bit of a security vulnerability to me.
+NOTE: The ability to drop an unsigned encryption library into the JRE without complaint was more than a bit surprising. Although this required file-system access, this seems like a bit of a security vulnerability to me.
 
 * Clone and build `git-cinnabar` extension:
   * `git clone https://github.com/glandium/git-cinnabar.git`

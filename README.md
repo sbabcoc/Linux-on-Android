@@ -19,8 +19,8 @@ Here's my installation (although not exactly sequential):
   * `git config --global user.email "john.smith@email.com"`
   * `git config --global user.name "John Smith"`
   * `git config --global credential.helper store`
-* Install GCC:
-  * `sudo pacman -S gcc`
+* Install developer tools:
+  * `sudo pacman -S base-devel`
 * Install scripts (includes 'chroot')
   * `sudo pacman -S arch-install-scripts`
 * Xfce4 (desktop environment)

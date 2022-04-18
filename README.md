@@ -21,8 +21,9 @@ Here's my installation (although not exactly sequential):
 * Eclipse (Java IDE)
 * Visual Studio Code (installed via 'yay')
 * Git
+  * `pacman -S git`
 * Man
-* PRoot
+* PRoot (installed by 'setupTermuxArch')
 * OpenSSH
 * GnuPG
 * Maven

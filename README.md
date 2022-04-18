@@ -8,7 +8,7 @@ Here's my installation (although not exactly sequential):
 * Jump Desktop (VNC client)
 * CodeBoard (on-screen keyboard)
 * Eclipse (Java IDE)
-* Visual Studio Code
+* Visual Studio Code (installed via 'yay')
 * Git
 * Man
 * PRoot

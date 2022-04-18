@@ -11,7 +11,7 @@ Here's my installation (although not exactly sequential):
   * `sudo visudo`
   * Add this line after `root`:
     * `scoba ALL=(ALL:ALL) ALL`
-  * `<esc>:ZZ`
+  * `<esc>:wq`
 * Install scripts (includes 'chroot')
   * `pacman -S arch-install-scripts`
 * Xfce4 (desktop environment)

@@ -4,7 +4,11 @@ How to set up a Java development environment on an Android phone
 Here's my installation (although not exactly sequential):
 * Termux (terminal emulator)
 * Arch Linux ARM (4.14.141+ aarch64)
+  * installed via 'setupTermuxArch'
+* Install scripts (includes 'chroot')
+  * `pacman -S arch-install-scripts`
 * Xfce4 (desktop environment)
+  * `pacman -S xfce4`
 * Jump Desktop (VNC client)
 * CodeBoard (on-screen keyboard)
 * Eclipse (Java IDE)

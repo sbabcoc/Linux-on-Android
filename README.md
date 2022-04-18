@@ -5,6 +5,13 @@ Here's my installation (although not exactly sequential):
 * Termux (terminal emulator)
 * Arch Linux ARM (4.14.141+ aarch64)
   * installed via 'setupTermuxArch'
+* Create new user:
+  * `useradd -m scoba`
+  * `passwd scoba`
+  * `sudo visudo`
+  * Add this line after `root`:
+    * `scoba ALL=(ALL:ALL) ALL`
+  * `<esc>:ZZ`
 * Install scripts (includes 'chroot')
   * `pacman -S arch-install-scripts`
 * Xfce4 (desktop environment)

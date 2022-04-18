@@ -12,16 +12,23 @@ Here's my installation (although not exactly sequential):
   * Add this line after `root`:
     * `scoba ALL=(ALL:ALL) ALL`
   * `<esc>:wq`
+* Switch to user 'scoba':
+  * `sudo su - scoba`
+* Install Git:
+  * `sudo pacman -S git`
+  * `git config --global user.email "john.smith@email.com"`
+  * `git config --global user.name "John Smith"`
+  * `git config --global credential.helper store`
+* Install GCC:
+  * `sudo pacman -S gcc`
 * Install scripts (includes 'chroot')
-  * `pacman -S arch-install-scripts`
+  * `sudo pacman -S arch-install-scripts`
 * Xfce4 (desktop environment)
-  * `pacman -S xfce4`
+  * `sudo pacman -S xfce4`
 * Jump Desktop (VNC client)
 * CodeBoard (on-screen keyboard)
 * Eclipse (Java IDE)
 * Visual Studio Code (installed via 'yay')
-* Git
-  * `pacman -S git`
 * Man
 * PRoot (installed by 'setupTermuxArch')
 * OpenSSH

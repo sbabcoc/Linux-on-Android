@@ -3,10 +3,9 @@ How to set up a Java development environment on an Android phone
 
 Here's my installation (although not exactly sequential):
 * Termux (terminal emulator)
-* Arch Linux ARM (4.14.141+ aarch64)
-  * installed via 'setupTermuxArch'
-* Install `systemctl` replacement:
-  * `csystemctl`
+  * Latest, installed from GitHub
+* Arch Linux with Xfce4
+  * installed via 'Andronix'
 * Create new user:
   * `useradd -m scoba`
   * `passwd scoba`
@@ -23,15 +22,8 @@ Here's my installation (although not exactly sequential):
   * `git config --global credential.helper store`
 * Install developer tools:
   * `sudo pacman -S base-devel`
-* Install scripts (includes 'chroot')
-  * `sudo pacman -S arch-install-scripts`
-* Install Xfce4 (desktop environment)
-  * `sudo pacman -S xfce4`
-  * `sudo pacman -S xfce4-goodies`
-* Install TigerVNC:
-  * `sudo pacman -S tigervnc`
-* Install LightDM Display Manager:
-  * `sudo pacman -S lightdm` 
+* ~~Install scripts (includes 'chroot')~~
+  * ~~`sudo pacman -S arch-install-scripts`~~
 * Jump Desktop (VNC client)
 * CodeBoard (on-screen keyboard)
 * Eclipse (Java IDE)

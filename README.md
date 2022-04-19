@@ -15,6 +15,8 @@ Here's my installation (although not exactly sequential):
   * `<esc>:wq`
 * Switch to user 'scoba':
   * `sudo su - scoba`
+* Install 'man':
+  * `sudo pacman -S man`
 * Install Git:
   * `sudo pacman -S git`
   * `git config --global user.email "john.smith@email.com"`
@@ -27,19 +29,21 @@ Here's my installation (although not exactly sequential):
   * Add Arch4Edu repository: 
     * https://github.com/arch4edu/arch4edu/wiki/Add-arch4edu-to-your-Archlinux
   * `sudo pacman -S fakeroot-tcp`
-* ~~Install scripts (includes 'chroot')~~
-  * ~~`sudo pacman -S arch-install-scripts`~~
+* Install 'yay' package manager from this repository
+* Install 'jed' editor from this repository
 * Jump Desktop (VNC client)
 * CodeBoard (on-screen keyboard)
+* JDK11, JDK8, JDK7
+  * `sudo pacman -S jdk11-openjdk`
+  * `sudo pacman -S jdk8-openjdk`
+  * `sudo pacman -S jdk7-openjdk`
+  * Install **SubEC** components from this repository into JDK7
 * Eclipse (Java IDE)
-* Visual Studio Code (installed via 'yay')
-* Man
-* OpenSSH
-* GnuPG
-* Maven
+* Visual Studio Code:
+  * `yay -S visual-studio-code-bin`
+  * `yay -S code-marketplace`
 * Gradle
 * SdkMan
-* JDK7, JDK8, JDK11
 * 'htop' (process viewer)
 * I built and installed 'fakeroot-tcp'
 * ... (NOTE: fakeroot is require by makepkg. Originally, this utility required SYSV, which Termux doesn't support. Newer releases may have fixed this issue, so building a specific TCP version may no longer be necessary.)

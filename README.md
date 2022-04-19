@@ -29,6 +29,8 @@ Here's my installation (although not exactly sequential):
   * `sudo pacman -S xfce4`
 * Install TigerVNC:
   * `sudo pacman -S tigervnc`
+* Install LightDM Display Manager:
+  * `sudo pacman -S lightdm` 
 * Jump Desktop (VNC client)
 * CodeBoard (on-screen keyboard)
 * Eclipse (Java IDE)

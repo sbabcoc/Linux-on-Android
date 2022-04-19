@@ -1,7 +1,6 @@
 # Linux-on-Android
 How to set up a Java development environment on an Android phone
 
-
 Here's my installation (although not exactly sequential):
 * Termux (terminal emulator)
   * Latest, installed from GitHub
@@ -21,8 +20,12 @@ Here's my installation (although not exactly sequential):
   * `git config --global user.email "john.smith@email.com"`
   * `git config --global user.name "John Smith"`
   * `git config --global credential.helper store`
+  * Perform a "push" to GitHub, entering username and PAT (personal access token)
 * Install developer tools:
   * `sudo pacman -S base-devel`
+* Install 'fakeroot-tcp':
+  * Add Arch4Edu repository: https://github.com/arch4edu/arch4edu/wiki/Add-arch4edu-to-your-Archlinux
+  * `sudo pacman -S fakeroot-tcp`
 * ~~Install scripts (includes 'chroot')~~
   * ~~`sudo pacman -S arch-install-scripts`~~
 * Jump Desktop (VNC client)

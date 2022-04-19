@@ -24,7 +24,8 @@ Here's my installation (although not exactly sequential):
 * Install developer tools:
   * `sudo pacman -S base-devel`
 * Install 'fakeroot-tcp':
-  * Add Arch4Edu repository: https://github.com/arch4edu/arch4edu/wiki/Add-arch4edu-to-your-Archlinux
+  * Add Arch4Edu repository: 
+    * https://github.com/arch4edu/arch4edu/wiki/Add-arch4edu-to-your-Archlinux
   * `sudo pacman -S fakeroot-tcp`
 * ~~Install scripts (includes 'chroot')~~
   * ~~`sudo pacman -S arch-install-scripts`~~

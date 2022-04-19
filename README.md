@@ -5,7 +5,7 @@ Here's my installation (although not exactly sequential):
 * Termux (terminal emulator)
   * Latest, installed from GitHub
 * Arch Linux with Xfce4
-  * installed via 'Andronix'
+  * installed in PRoot via 'Andronix'
 * Create new user:
   * `useradd -m scoba`
   * `passwd scoba`
@@ -29,7 +29,6 @@ Here's my installation (although not exactly sequential):
 * Eclipse (Java IDE)
 * Visual Studio Code (installed via 'yay')
 * Man
-* PRoot (installed by 'setupTermuxArch')
 * OpenSSH
 * GnuPG
 * Maven

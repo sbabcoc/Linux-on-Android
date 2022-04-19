@@ -27,6 +27,7 @@ Here's my installation (although not exactly sequential):
   * `sudo pacman -S arch-install-scripts`
 * Install Xfce4 (desktop environment)
   * `sudo pacman -S xfce4`
+  * `sudo pacman -S xfce4-goodies`
 * Install TigerVNC:
   * `sudo pacman -S tigervnc`
 * Install LightDM Display Manager:

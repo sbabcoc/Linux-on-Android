@@ -5,6 +5,8 @@ Here's my installation (although not exactly sequential):
 * Termux (terminal emulator)
 * Arch Linux ARM (4.14.141+ aarch64)
   * installed via 'setupTermuxArch'
+* Install `systemctl` replacement:
+  * `csystemctl`
 * Create new user:
   * `useradd -m scoba`
   * `passwd scoba`

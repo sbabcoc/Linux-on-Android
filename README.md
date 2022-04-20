@@ -41,8 +41,8 @@ Here's my installation (although not exactly sequential):
 * Install Eclipse (Java IDE) via installer in Xfce4
   * Download installer, extract, and launch
 * Visual Studio Code:
-  * `yay -S visual-studio-code-bin`
-  * `yay -S code-marketplace`
+  * `git clone https://aur.archlinux.org/visual-studio-code-bin.git`
+  * `makepkg -si`
 * Gradle
 * SdkMan
 * 'htop' (process viewer)

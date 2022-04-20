@@ -42,6 +42,7 @@ Here's my installation (although not exactly sequential):
   * Download installer, extract, and launch
 * Install archive utilities:
   * `sudo pacman -S zip unzip`
+  * `sudo pacman -S xarchiver`
 * Install SdkMan:
   * `curl -s "https://get.sdkman.io" | bash`
 * Install Gradle:

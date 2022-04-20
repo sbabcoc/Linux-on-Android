@@ -38,7 +38,8 @@ Here's my installation (although not exactly sequential):
   * `sudo pacman -S jdk8-openjdk`
   * `sudo pacman -S jdk7-openjdk`
   * Install **SubEC** components from this repository into JDK7
-* Eclipse (Java IDE)
+* Install Eclipse (Java IDE) via installer in Xfce4
+  * Download installer, extract, and launch
 * Visual Studio Code:
   * `yay -S visual-studio-code-bin`
   * `yay -S code-marketplace`

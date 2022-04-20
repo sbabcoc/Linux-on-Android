@@ -40,16 +40,14 @@ Here's my installation (although not exactly sequential):
   * Install **SubEC** components from this repository into JDK7
 * Install Eclipse (Java IDE) via installer in Xfce4
   * Download installer, extract, and launch
-* Gradle
-* SdkMan
-* 'htop' (process viewer)
-* I built and installed 'fakeroot-tcp'
-* ... (NOTE: fakeroot is require by makepkg. Originally, this utility required SYSV, which Termux doesn't support. Newer releases may have fixed this issue, so building a specific TCP version may no longer be necessary.)
-* ... which allows me to build and install other packages
-* ... Jed (editor)
-* ... 'yay' (package manager)
-* ... 'gpm' (console mouse driver) - NOTE: There appears to be no "mouse" device for this driver to interact with.
-* Mercurial (version control client)
+* Install archive utilities:
+  * `sudo pacman -S zip unzip`
+* Install SdkMan:
+  * `curl -s "https://get.sdkman.io" | bash`
+* Install Gradle:
+  * `sdk install gradle`
+* Install Mercurial (version control client):
+  * `yay -S mercurial`
 * ... with which I downloaded the source for OpenJDK 7
 * ... so that I could build a JAR from the SunEC source files
 * ... which I dropped into the jre/lib/ext folder of java-7-openjdk

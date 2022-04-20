@@ -40,9 +40,6 @@ Here's my installation (although not exactly sequential):
   * Install **SubEC** components from this repository into JDK7
 * Install Eclipse (Java IDE) via installer in Xfce4
   * Download installer, extract, and launch
-* Visual Studio Code:
-  * `git clone https://aur.archlinux.org/visual-studio-code-bin.git`
-  * `makepkg -si`
 * Gradle
 * SdkMan
 * 'htop' (process viewer)

@@ -13,42 +13,41 @@ Here's my installation (although not exactly sequential):
   * Add this line after `root`:
     * `scoba ALL=(ALL:ALL) ALL`
   * `<esc>:wq`
-* Switch to user 'scoba':
-  * `sudo su - scoba`
 * Install 'man':
-  * `sudo pacman -S man`
+  * `pacman -S man`
 * Install Git:
-  * `sudo pacman -S git`
+  * `pacman -S git`
   * `git config --global user.email "john.smith@email.com"`
   * `git config --global user.name "John Smith"`
   * `git config --global credential.helper store`
+  * `git config --global fetch.prune true`
   * Perform a "push" to GitHub, entering username and PAT (personal access token)
 * Install developer tools:
-  * `sudo pacman -S base-devel`
+  * `pacman -S base-devel`
 * Install 'fakeroot-tcp':
   * Add Arch4Edu repository: 
     * https://github.com/arch4edu/arch4edu/wiki/Add-arch4edu-to-your-Archlinux
-  * `sudo pacman -S fakeroot-tcp`
+  * `pacman -S fakeroot-tcp`
 * Install 'yay' package manager from this repository
 * Install 'jed' editor from this repository
 * Jump Desktop (VNC client)
 * CodeBoard (on-screen keyboard)
 * JDK11, JDK8, JDK7
-  * `sudo pacman -S jdk11-openjdk`
-  * `sudo pacman -S jdk8-openjdk`
-  * `sudo pacman -S jdk7-openjdk`
+  * `pacman -S jdk11-openjdk`
+  * `pacman -S jdk8-openjdk`
+  * `pacman -S jdk7-openjdk`
   * Install **SubEC** components from this repository into JDK7
 * Install Eclipse (Java IDE) via installer in Xfce4
   * Download installer, extract, and launch
 * Install archive utilities:
-  * `sudo pacman -S zip unzip`
-  * `sudo pacman -S xarchiver`
+  * `pacman -S zip unzip`
+  * `pacman -S xarchiver`
 * Install SdkMan:
   * `curl -s "https://get.sdkman.io" | bash`
 * Install Gradle:
   * `sdk install gradle`
 * Install Mercurial (version control client):
-  * `yay -S mercurial`
+  * `sudo -u scoba yay -S mercurial`
 * ... with which I downloaded the source for OpenJDK 7
 * ... so that I could build a JAR from the SunEC source files
 * ... which I dropped into the jre/lib/ext folder of java-7-openjdk

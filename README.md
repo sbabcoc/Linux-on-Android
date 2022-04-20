@@ -64,7 +64,6 @@ NOTE: The ability to drop an unsigned encryption library into the JRE without co
   * `sudo pacman -S llvm`
   * `sudo pacman -S llvm-libs`
   * `sudo pacman -S clang`
-  * `sudo pacman -S libffi`
   * ... (others will be encountered building Mozilla Central)
 * Clone the Mozilla Central repository:
   * `git clone hg::https://hg.mozilla.org/mozilla-central`

@@ -66,10 +66,11 @@ NOTE: The ability to drop an unsigned encryption library into the JRE without co
   * `pacman -S clang`
   * `pacman -S python-pip`
   * `pacman -S cbindgen`
-  * `pacman -S nodejs`
-  * ... (others will be encountered building Mozilla Central)
-* Clone the Mozilla Central repository:
-  * `git clone hg::https://hg.mozilla.org/mozilla-central`
+  * `pacman -S nodejs npm`
+* Clone the Selenium Foundation repository:
+  * `git clone https://github.com/sbabcoc/Selenium-Foundation.git`
+* Install GeckoDriver:
+  * `pacman -S geckodriver`
 
 ## Hardware/Accessories
 * LG Velvet (LM-G900TM)

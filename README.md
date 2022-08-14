@@ -3,7 +3,15 @@ How to set up a Java development environment on an Android phone
 
 Here's my installation (although not exactly sequential):
 * Termux (terminal emulator)
-  * Latest, installed from GitHub
+  * Latest, installed from F-Droid
+  * `pkg update`
+  * `pkg upgrade`
+  * `pkg install root-repo`
+  * `pkg install x11-repo`
+* 'proot-distro' Linux distribution manager
+  * `pkg install proot-distro`
+
+[prior installation - some may be retained]
 * Arch Linux with Xfce4
   * installed in PRoot via 'Andronix'
 * Create new user:

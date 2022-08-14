@@ -1,7 +1,7 @@
 # Linux-on-Android
 How to set up a Java development environment on an Android phone
 
-Here's my installation (although not exactly sequential):
+Here is my installation (although not exactly sequential):
 * Install Termux (terminal emulator):
   * Latest, installed from F-Droid
   * `pkg update`

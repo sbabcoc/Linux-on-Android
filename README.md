@@ -2,7 +2,7 @@
 How to set up a Java development environment on an Android phone
 
 Here's my installation (although not exactly sequential):
-* Termux (terminal emulator)
+* Install Termux (terminal emulator):
   * Latest, installed from F-Droid
   * `pkg update`
   * `pkg upgrade`
@@ -10,13 +10,20 @@ Here's my installation (although not exactly sequential):
   * `pkg install x11-repo`
 * 'proot-distro' Linux distribution manager
   * `pkg install proot-distro`
+* Arch Linux:
+  * `proot-distro install archlinux`
 
-[prior installation - some may be retained]
-* Arch Linux with Xfce4
-  * installed in PRoot via 'Andronix'
+To launch Arch Linux:
+* `proot-distro login archlinux`
+
 * Create new user:
   * `useradd -m scoba`
   * `passwd scoba`
+* Update package registry:
+  * `pkg -Syu`
+* Install 'sudo':
+  * `pkg install sudo`
+* Add user to "sudoers":
   * `sudo visudo`
   * Add this line after `root`:
     * `scoba ALL=(ALL:ALL) ALL`
@@ -38,6 +45,8 @@ Here's my installation (although not exactly sequential):
   * `pacman -S fakeroot-tcp`
 * Install 'yay' package manager from this repository
 * Install 'jed' editor from this repository
+
+[prior installation - some may be retained]
 * Jump Desktop (VNC client)
 * CodeBoard (on-screen keyboard)
 * JDK11, JDK8, JDK7

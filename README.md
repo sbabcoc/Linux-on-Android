@@ -1,7 +1,7 @@
 # Linux-on-Android
 How to set up a Java development environment on an Android phone
 
-Here is my installation (although not exactly sequential):
+Here's my installation (although not exactly sequential):
 * Install Termux (terminal emulator):
   * Latest, installed from F-Droid
   * `pkg update`
@@ -43,8 +43,10 @@ To launch Arch Linux:
   * Add Arch4Edu repository: 
     * https://github.com/arch4edu/arch4edu/wiki/Add-arch4edu-to-your-Archlinux
   * `pacman -S fakeroot-tcp`
-* Install 'yay' package manager from this repository
-* Install 'jed' editor from this repository
+* Install 'yay' package manager:
+  * NOTE: This package must be built locally, because no one appears to have published it for the `aarch64` architecture.
+* Install 'jed' editor:
+  * NOTE: This package must be built locally, because no one appears to have published it for the `aarch64` architecture.
 
 [prior installation - some may be retained]
 * Jump Desktop (VNC client)
@@ -91,7 +93,7 @@ NOTE: The ability to drop an unsigned encryption library into the JRE without co
 
 ## Hardware/Accessories
 * LG Velvet (LM-G900TM)
-  * Android 10
+  * Android 11
   * MediaTek Dimensity 1000C MT6883 2,00 GHz [Number of cores: 8]
   * Internal memory: 128 GB
   * RAM memory: 6 GB

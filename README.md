@@ -2,18 +2,18 @@
 How to set up a Java development environment on an Android phone
 
 Here's my installation (although not exactly sequential):
-* Install Termux (terminal emulator):
+* Install **Jump Desktop** (VNC client)
+* Install **CodeBoard** (on-screen keyboard)
+* Install **Termux** (terminal emulator):
   * Latest, installed from F-Droid
   * `pkg update`
   * `pkg upgrade`
-  * `pkg install root-repo`
-  * `pkg install x11-repo`
-* 'proot-distro' Linux distribution manager
+* Install 'proot-distro' Linux distribution manager
   * `pkg install proot-distro`
-* Arch Linux:
+* Install **Arch Linux**:
   * `proot-distro install archlinux`
 
-To launch Arch Linux:
+To launch **Arch Linux**:
 * `proot-distro login archlinux`
 
 * Create new user:
@@ -21,16 +21,16 @@ To launch Arch Linux:
   * `passwd scoba`
 * Update package registry:
   * `pkg -Syu`
-* Install 'sudo':
+* Install `sudo`:
   * `pkg install sudo`
 * Add user to "sudoers":
   * `sudo visudo`
   * Add this line after `root`:
     * `scoba ALL=(ALL:ALL) ALL`
   * `<esc>:wq`
-* Install 'man':
+* Install `man`:
   * `pacman -S man`
-* Install Git:
+* Install `git`:
   * `pacman -S git`
   * `git config --global user.email "john.smith@email.com"`
   * `git config --global user.name "John Smith"`
@@ -39,18 +39,29 @@ To launch Arch Linux:
   * Perform a "push" to GitHub, entering username and PAT (personal access token)
 * Install developer tools:
   * `pacman -S base-devel`
-* Install 'fakeroot-tcp':
+* Install `fakeroot-tcp`:
   * Add Arch4Edu repository: 
     * https://github.com/arch4edu/arch4edu/wiki/Add-arch4edu-to-your-Archlinux
   * `pacman -S fakeroot-tcp`
-* Install 'yay' package manager:
+* Install `yay` package manager:
   * NOTE: This package must be built locally, because no one appears to have published it for the `aarch64` architecture.
-* Install 'jed' editor:
+  * https://github.com/Jguer/yay#source
+* Install `jed` editor:
   * NOTE: This package must be built locally, because no one appears to have published it for the `aarch64` architecture.
+  * `pacman -S slang libxt`
+  * `git clone https://github.com/jedsoft/jed.git`
+  * `cd jed`
+  * `./configure --prefix=/usr/local`
+  * `make clean`
+  * `make`
+  * `make xjed`
+  * `make install`
+* Install **TigerVNC**:
+  * `pacman -S tigervnc`
+* Install **XFCE4**:
+  * `pacman -S xfce4 xfce4-godies`
 
 [prior installation - some may be retained]
-* Jump Desktop (VNC client)
-* CodeBoard (on-screen keyboard)
 * JDK11, JDK8, JDK7
   * `pacman -S jdk11-openjdk`
   * `pacman -S jdk8-openjdk`

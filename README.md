@@ -13,7 +13,7 @@ Here's my installation (although not exactly sequential):
 * Install **Arch Linux**:
   * `proot-distro install archlinux`
 
-| To launch **Arch Linux**: `proot-distro login archlinux`
+> To launch **Arch Linux**: `proot-distro login archlinux`
 
 * Create new user:
   * `useradd -m scoba`

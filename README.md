@@ -97,6 +97,8 @@ NOTE: The ability to drop an unsigned encryption library into the JRE without co
   * MediaTek Dimensity 1000C MT6883 2,00 GHz [Number of cores: 8]
   * Internal memory: 128 GB
   * RAM memory: 6 GB
+  * 1080 x 2460
 * Pixio PX160 Portable Monitor
+  * 1920 x 1080
 * Folding Bluethooth keyboard/trackpad
 * Zippered hard-sided case for keyboard, cables, and power supply

@@ -36,6 +36,10 @@ Here's my installation (although not exactly sequential):
   * `git config --global credential.helper store`
   * `git config --global fetch.prune true`
   * Perform a "push" to GitHub, entering username and PAT (personal access token)
+* Install SdkMan:
+  * `curl -s "https://get.sdkman.io" | bash`
+* Install Gradle:
+  * `sdk install gradle`
 * Install developer tools:
   * `pacman -S base-devel`
 * Install `fakeroot-tcp`:
@@ -57,24 +61,44 @@ Here's my installation (although not exactly sequential):
   * `make install`
 * Install **TigerVNC**:
   * `pacman -S tigervnc`
+  * `nano .vnc/config`
+    > session=xfce4
+    > geometry=1920x1080
+    > localhost
+    > alwaysshared
 * Install **XFCE4**:
   * `pacman -S xfce4 xfce4-godies`
-
-[prior installation - some may be retained]
-* JDK11, JDK8, JDK7
-  * `pacman -S jdk11-openjdk`
-  * `pacman -S jdk8-openjdk`
-  * `pacman -S jdk7-openjdk`
-  * Install **SubEC** components from this repository into JDK7
-* Install Eclipse (Java IDE) via installer in Xfce4
-  * Download installer, extract, and launch
+  * may not need: `pacman -S xfce4-session`
 * Install archive utilities:
   * `pacman -S zip unzip`
   * `pacman -S xarchiver`
-* Install SdkMan:
-  * `curl -s "https://get.sdkman.io" | bash`
-* Install Gradle:
-  * `sdk install gradle`
+* Install **Firefox** and its driver:
+  * `pacman -S firefox geckodriver`
+* Start VNC server:
+  * `vncserver :1`
+* Access XFCE4 session with Jump Desktop
+* Open Firefox and download **Eclipse Installer**
+* Extract Eclipse Installer and run it to install **Eclipse** 
+
+* JDK11, JDK8, JDK7
+  * `pacman -S jdk11-openjdk`
+  * `pacman -S jdk8-openjdk`
+* Clone the Selenium Foundation repository:
+  * `git clone https://github.com/sbabcoc/Selenium-Foundation.git`
+  
+* Install LLVM and CLang
+  * `pacman -S llvm`
+  * `pacman -S llvm-libs`
+  * `pacman -S clang`
+  * `pacman -S python-pip`
+  * `pacman -S cbindgen`
+  * `pacman -S nodejs npm`
+
+## To install JDK7 with SunEC support:
+* `pacman -S jdk7-openjdk`
+* Install **SubEC** components from **Linux-on-Android** repository into JDK7
+
+## To build the SunEC JAR:
 * Install Mercurial (version control client):
   * `sudo -u scoba yay -S mercurial`
 * ... with which I downloaded the source for OpenJDK 7
@@ -84,23 +108,13 @@ Here's my installation (although not exactly sequential):
 
 NOTE: The ability to drop an unsigned encryption library into the JRE without complaint was more than a bit surprising. Although this required file-system access, this seems like a bit of a security vulnerability to me.
 
+## To clone the `geckodriver` repo, you need the 'git-cinnabar' extension:
 * Clone and build `git-cinnabar` extension:
   * `git clone https://github.com/glandium/git-cinnabar.git`
   * `cd git-cinnabar`
   * `make`
   * Add `git-cinnabar` folder to the **PATH**
-* Install LLVM and CLang
-  * `pacman -S llvm`
-  * `pacman -S llvm-libs`
-  * `pacman -S clang`
-  * `pacman -S python-pip`
-  * `pacman -S cbindgen`
-  * `pacman -S nodejs npm`
-* Clone the Selenium Foundation repository:
-  * `git clone https://github.com/sbabcoc/Selenium-Foundation.git`
-* Install GeckoDriver:
-  * `pacman -S geckodriver`
-
+  
 ## Hardware/Accessories
 * LG Velvet (LM-G900TM)
   * Android 11

@@ -62,10 +62,12 @@ Here's my installation (although not exactly sequential):
 * Install **TigerVNC**:
   * `pacman -S tigervnc`
   * `nano .vnc/config`
-    > session=xfce4
-    > geometry=1920x1080
-    > localhost
-    > alwaysshared
+  ```
+    session=xfce4
+    geometry=1920x1080
+    localhost
+    alwaysshared
+  ```
 * Install **XFCE4**:
   * `pacman -S xfce4 xfce4-godies`
   * may not need: `pacman -S xfce4-session`

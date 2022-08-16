@@ -69,7 +69,7 @@ Here's my installation (although not exactly sequential):
     alwaysshared
   ```
 * Install **XFCE4**:
-  * `pacman -S xfce4 xfce4-godies`
+  * `pacman -S xfce4 xfce4-goodies`
   * may not need: `pacman -S xfce4-session`
 * Install archive utilities:
   * `pacman -S zip unzip`

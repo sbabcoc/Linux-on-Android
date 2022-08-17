@@ -81,6 +81,7 @@ Here's my installation (although not exactly sequential):
 * Access XFCE4 session with Jump Desktop
 * Open Firefox and download **Eclipse Installer**
 * Extract Eclipse Installer and run it to install **Eclipse** 
+  * Install TestNG
 * Install **Visual Studio Code** via `yay`:
   * `su scoba`
   * `yay -S visual-studio-code-bin`
@@ -88,6 +89,31 @@ Here's my installation (although not exactly sequential):
 * JDK11, JDK8
   * `pacman -S jdk11-openjdk`
   * `pacman -S jdk8-openjdk`
+* Add exports for **JDK8_HOME** and **JDK11_HOME** to `.bashrc`:
+  * `~/.bash`
+  ```
+    export JDK8_HOME=/urs/lib/jvm/java-8-openjdk
+    export JDK11_HOME=/urs/lib/jvm/java-11-openjdk
+  ```
+  
+* Create Maven toolchains configuration:
+  * `~/.m2/toolchains.xml`
+  ```
+    <?xml version="1.0" encoding="UTF8"?>
+    <toolchains>
+      <!-- JDK toolchains -->
+      <toolchain>
+        <type>jdk</type>
+        <provides>
+          <version>8</version>
+        </provides>
+        <configuration>
+          <jdkHome>/usr/lib/jvm/java-8-openjdk</jdkHome>
+        </configuration>
+      </toolchain>
+    </toolchains>
+  ```
+
 * Clone the Selenium Foundation repository:
   * `git clone https://github.com/sbabcoc/Selenium-Foundation.git`
   

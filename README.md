@@ -81,6 +81,9 @@ Here's my installation (although not exactly sequential):
 * Access XFCE4 session with Jump Desktop
 * Open Firefox and download **Eclipse Installer**
 * Extract Eclipse Installer and run it to install **Eclipse** 
+* Install **Visual Studio Code** via `yay`:
+  * `su scoba`
+  * `yay -S visual-studio-code-bin`
 
 * JDK11, JDK8
   * `pacman -S jdk11-openjdk`

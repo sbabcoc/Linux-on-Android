@@ -81,7 +81,7 @@ Here's my installation (although not exactly sequential):
 * Access XFCE4 session with Jump Desktop
 * Open Firefox and download **Eclipse Installer**
 * Extract Eclipse Installer and run it to install **Eclipse** 
-  * Install TestNG
+  * Install the TestNG plug-in, but not the optional Maven integration
 * Install **Visual Studio Code** via `yay`:
   * `su scoba`
   * `yay -S visual-studio-code-bin`

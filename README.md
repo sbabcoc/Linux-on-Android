@@ -5,6 +5,8 @@ How to set up a Java development environment on an Android phone
 
 My prior installation wasn't very stable, crashing quite regularly while I was using it. I've trashed that first attempt and have started on a new installation built on UserLAnd. Use of the standard "graphical" configuration isn't terribly intuitive, but I'm going to work with this if I can.
 
+## Old installation (deprecated)
+
 Here's my installation (although not exactly sequential):
 * Install **Jump Desktop** (VNC client)
 * Install **CodeBoard** (on-screen keyboard)

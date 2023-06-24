@@ -1,100 +1,42 @@
 # Linux-on-Android
 How to set up a Java development environment on an Android phone
 
-## Revised installation (coming soon)
+## Revised installation
 
-My prior installation wasn't very stable, crashing quite regularly while I was using it. I've trashed that first attempt and have started on a new installation built on UserLAnd. Use of the standard "graphical" configuration isn't terribly intuitive, but I'm going to work with this if I can.
-
-## Old installation (deprecated)
-
-Here's my installation (although not exactly sequential):
 * Install **Jump Desktop** (VNC client)
 * Install **CodeBoard** (on-screen keyboard)
-* Install **Termux** (terminal emulator):
-  * Latest, installed from F-Droid
-  * `pkg update`
-  * `pkg upgrade`
-* Install 'proot-distro' Linux distribution manager
-  * `pkg install proot-distro`
-* Install **Arch Linux**:
-  * `proot-distro install archlinux`
-
-> To launch **Arch Linux**: `proot-distro login archlinux`
-
-* Create new user:
-  * `useradd -m scoba`
-  * `passwd scoba`
+* Install **UserLAnd** from Play Store
+* Launch **UserLAnd** and open Arch Linux (terminal interface)
 * Update package registry:
-  * `pkg -Syu`
-* Install `sudo`:
-  * `pkg install sudo`
-* Add user to "sudoers":
-  * `sudo visudo`
-  * Add this line after `root`:
-    * `scoba ALL=(ALL:ALL) ALL`
-  * `<esc>:wq`
+  * `sudo pacman -Syu`
 * Install `man`:
-  * `pacman -S man`
+  * `sudo pacman -S man`
 * Install `git`:
-  * `pacman -S git`
+  * `sudo pacman -S git`
   * `git config --global user.email "john.smith@email.com"`
   * `git config --global user.name "John Smith"`
   * `git config --global credential.helper store`
   * `git config --global fetch.prune true`
   * Perform a "push" to GitHub, entering username and PAT (personal access token)
+* Install archive utilities:
+  * `sudo pacman -S zip unzip`
+  * `sudo pacman -S xarchiver`
 * Install SdkMan:
   * `curl -s "https://get.sdkman.io" | bash`
 * Install Gradle:
   * `sdk install gradle`
 * Install developer tools:
-  * `pacman -S base-devel`
+  * `sudo pacman -S base-devel glibc`
 * Install `fakeroot-tcp`:
   * Add Arch4Edu repository: 
     * https://github.com/arch4edu/arch4edu/wiki/Add-arch4edu-to-your-Archlinux
-  * `pacman -S fakeroot-tcp`
+  * `sudo pacman -Sy fakeroot-tcp`
 * Install `yay` package manager:
   * NOTE: This package must be built locally, because no one appears to have published it for the `aarch64` architecture.
   * https://github.com/Jguer/yay#source
-* Install `jed` editor:
-  * NOTE: This package must be built locally, because no one appears to have published it for the `aarch64` architecture.
-  * `pacman -S slang libxt`
-  * `git clone https://github.com/jedsoft/jed.git`
-  * `cd jed`
-  * `./configure --prefix=/usr/local`
-  * `make clean`
-  * `make`
-  * `make xjed`
-  * `make install`
-* Install **TigerVNC**:
-  * `pacman -S tigervnc`
-  * `nano .vnc/config`
-  ```
-    session=xfce4
-    geometry=1920x1080
-    localhost
-    alwaysshared
-  ```
-* Install **XFCE4**:
-  * `pacman -S xfce4 xfce4-goodies`
-  * may not need: `pacman -S xfce4-session`
-* Install archive utilities:
-  * `pacman -S zip unzip`
-  * `pacman -S xarchiver`
-* Install **Firefox** and its driver:
-  * `pacman -S firefox geckodriver`
-* Start VNC server:
-  * `vncserver :1`
-* Access XFCE4 session with Jump Desktop
-* Open Firefox and download **Eclipse Installer**
-* Extract Eclipse Installer and run it to install **Eclipse** 
-  * Install the TestNG plug-in, but not the optional Maven integration
-* Install **Visual Studio Code** via `yay`:
-  * `su scoba`
-  * `yay -S visual-studio-code-bin`
-
 * JDK11, JDK8
-  * `pacman -S jdk11-openjdk`
-  * `pacman -S jdk8-openjdk`
+  * `sudo pacman -S jdk11-openjdk`
+  * `sudo pacman -S jdk8-openjdk`
 * Add exports for **JDK8_HOME** and **JDK11_HOME** to `.bashrc`:
   * `~/.bash`
   ```
@@ -120,6 +62,46 @@ Here's my installation (although not exactly sequential):
     </toolchains>
   ```
 
+* Install `wget`:
+  * `sudo pacman -S wget`
+* Install Bazelisk:
+  * `wget https://github.com/bazelbuild/bazelisk/releases/download/v1.17.0/bazelisk-linux/.arm64`
+  * 
+* Install `jed` editor:
+  * NOTE: This package must be built locally, because no one appears to have published it for the `aarch64` architecture.
+  * `sudo pacman -S slang libxt`
+  * `git clone https://github.com/jedsoft/jed.git`
+  * `cd jed`
+  * `./configure --prefix=/usr/local`
+  * `make clean`
+  * `make`
+  * `make xjed`
+  * `make install`
+* Install **TigerVNC**:
+  * `sudo pacman -S tigervnc`
+  * `nano .vnc/config`
+  ```
+    session=xfce4
+    geometry=1920x1080
+    localhost
+    alwaysshared
+  ```
+* Install **XFCE4**:
+  * `sudo pacman -S xfce4 xfce4-goodies`
+  * may not need: `pacman -S xfce4-session`
+* Install **Firefox** and its driver:
+  * `sudo pacman -S firefox geckodriver`
+* Start VNC server:
+  * `vncserver :1`
+* Access XFCE4 session with Jump Desktop
+* Open Firefox and download **Eclipse Installer**
+* Extract Eclipse Installer and run it to install **Eclipse** 
+  * Install the TestNG plug-in, but not the optional Maven integration
+* Install **Visual Studio Code** via `yay`:
+  * `su scoba`
+  * `yay -S visual-studio-code-bin`
+
+
 * Clone the Selenium Foundation repository:
   * `git clone https://github.com/sbabcoc/Selenium-Foundation.git`
   
@@ -139,7 +121,7 @@ Here's my installation (although not exactly sequential):
 ## Stuff you probably won't need
 
 #### LLVM and CLang
-  * `pacman -S llvm`
+  * `sudo pacman -S llvm`
   * `pacman -S llvm-libs`
   * `pacman -S clang`
   * `pacman -S python-pip`

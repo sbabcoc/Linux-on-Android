@@ -48,7 +48,7 @@ How to set up a Java development environment on an Android phone
   * `sudo pacman -S jdk11-openjdk`
   * `sudo pacman -S jdk8-openjdk`
 * Add exports for **JDK8_HOME** and **JDK11_HOME** to `.bashrc`:
-  * `~/.bash`
+  * `~/.bashrc`
   ```
     export JDK8_HOME=/urs/lib/jvm/java-8-openjdk
     export JDK11_HOME=/urs/lib/jvm/java-11-openjdk
@@ -67,6 +67,15 @@ How to set up a Java development environment on an Android phone
         </provides>
         <configuration>
           <jdkHome>/usr/lib/jvm/java-8-openjdk</jdkHome>
+        </configuration>
+      </toolchain>
+      <toolchain>
+        <type>jdk</type>
+        <provides>
+          <version>11</version>
+        </provides>
+        <configuration>
+          <jdkHome>/usr/lib/jvm/java-11-openjdk</jdkHome>
         </configuration>
       </toolchain>
     </toolchains>

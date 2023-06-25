@@ -44,7 +44,7 @@ How to set up a Java development environment on an Android phone
 * Install `yay` package manager:
   * NOTE: This package must be built locally, because no one appears to have published it for the `aarch64` architecture.
   * https://github.com/Jguer/yay#source
-* JDK11, JDK8
+* JDK11, JDK8:
   * `sudo pacman -S jdk11-openjdk`
   * `sudo pacman -S jdk8-openjdk`
 * Add exports for **JDK8_HOME** and **JDK11_HOME** to `.bashrc`:
@@ -88,6 +88,8 @@ How to set up a Java development environment on an Android phone
   * `mv bazelisk-linux-arm64 bazelisk`
   * `chmod +x bazelisk`
   * `mv bazelisk /usr/sbin/bazelisk`
+* Install `buildifier`:
+  * `go install github.com/bazelbuild/buildtools/buildifier@latest`
 * Install `jed` editor:
   * NOTE: This package must be built locally, because no one appears to have published it for the `aarch64` architecture.
   * `sudo pacman -S slang libxt`

@@ -27,7 +27,7 @@ How to set up a Java development environment on an Android phone
   * `sudo pacman -S maven`
 * Install Gradle:
   * `sdk install gradle`
-* Install/create Maven/GitHub artifacts:
+* Install/create Maven/Gradle/GitHub artifacts:
   * ~/.m2
     * settings.xml
   * ~/.gnupg

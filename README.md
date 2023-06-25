@@ -76,7 +76,9 @@ How to set up a Java development environment on an Android phone
   * `sudo pacman -S wget`
 * Install Bazelisk:
   * `wget https://github.com/bazelbuild/bazelisk/releases/download/v1.17.0/bazelisk-linux-arm64`
-  * 
+  * `mv bazelisk-linux-arm64 bazelisk`
+  * `chmod +x bazelisk`
+  * `mv bazelisk /usr/sbin/bazelisk`
 * Install `jed` editor:
   * NOTE: This package must be built locally, because no one appears to have published it for the `aarch64` architecture.
   * `sudo pacman -S slang libxt`

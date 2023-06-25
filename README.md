@@ -3,10 +3,9 @@ How to set up a Java development environment on an Android phone
 
 ## Revised installation
 
-* Install **Jump Desktop** (VNC client)
 * Install **CodeBoard** (on-screen keyboard)
 * Install **UserLAnd** from Play Store
-* Launch **UserLAnd** and open Arch Linux (terminal interface)
+* Launch **UserLAnd** and open Arch Linux (graphical interface)
 * Update package registry:
   * `sudo pacman -Syu`
 * Install `man`:
@@ -100,26 +99,10 @@ How to set up a Java development environment on an Android phone
   * `make`
   * `make xjed`
   * `make install`
-* Install **TigerVNC**:
-  * `sudo pacman -S tigervnc`
-  * `nano .vnc/config`
-  ```
-    session=xfce4
-    geometry=1920x1080
-    localhost
-    alwaysshared
-  ```
-* Install **X**:
-  * `sudo pacman -S xorg-server xorg-apps`
-* Install **XFCE4**:
-  * `sudo pacman -S xfce4 xfce4-goodies`
-  * may not need: `sudo pacman -S xfce4-session`
 * Install **Firefox** and its driver:
   * `sudo pacman -S firefox geckodriver`
-* Start VNC server:
-  * `vncserver :1`
-* Access XFCE4 session with Jump Desktop
 * Open Firefox and download **Eclipse Installer**
+  * `dbus-run-session -- firefox`
 * Extract Eclipse Installer and run it to install **Eclipse** 
   * Install the TestNG plug-in, but not the optional Maven integration
 * Install **Visual Studio Code** via `yay`:

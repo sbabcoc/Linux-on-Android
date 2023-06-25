@@ -23,8 +23,18 @@ How to set up a Java development environment on an Android phone
   * `sudo pacman -S xarchiver`
 * Install SdkMan:
   * `curl -s "https://get.sdkman.io" | bash`
+* Install Maven:
+  * `sudo pacman -S maven`
 * Install Gradle:
   * `sdk install gradle`
+* Install/create Maven/GitHub artifacts:
+  * ~/.m2
+    * settings.xml
+  * ~/.gnupg
+    * secring.gpg
+    * pubring.gpg
+  * ~/.gradle/
+    * gradle.properties
 * Install developer tools:
   * `sudo pacman -S base-devel glibc`
 * Install `fakeroot-tcp`:

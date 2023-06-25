@@ -109,6 +109,8 @@ How to set up a Java development environment on an Android phone
     localhost
     alwaysshared
   ```
+* Install **X**:
+  * `sudo pacman -S xorg-server xorg-apps`
 * Install **XFCE4**:
   * `sudo pacman -S xfce4 xfce4-goodies`
   * may not need: `sudo pacman -S xfce4-session`

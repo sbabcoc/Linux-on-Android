@@ -8,6 +8,8 @@ How to set up a Java development environment on an Android phone
 * Launch **UserLAnd** and open Arch Linux (graphical interface)
 * Update package registry:
   * `sudo pacman -Syu`
+* Install developer tools:
+  * `sudo pacman -S base-devel glibc`
 * Install `man`:
   * `sudo pacman -S man`
 * Install `git`:
@@ -18,8 +20,19 @@ How to set up a Java development environment on an Android phone
   * `git config --global fetch.prune true`
   * Perform a "push" to GitHub, entering username and PAT (personal access token)
 * Install archive utilities:
-  * `sudo pacman -S zip unzip`
-  * `sudo pacman -S xarchiver`
+  * `sudo pacman -S zip unzip xarchiver`
+* Install `yay` package manager:
+  * NOTE: This package must be built locally, because no one appears to have published it for the `aarch64` architecture.
+  * https://github.com/Jguer/yay#source
+* Install **Visual Studio Code** via `yay`:
+  * `yay -S visual-studio-code-bin`
+  * Create `code-flags.conf` file:
+    * `nano .config/code-flags.conf`
+    * `--no-sandbox`
+    * `--user-data-dir=/home/userland/.vscode-data`
+    * Type `&lt;ctrl-x&gt;y&lt;enter&gt;`
+    * **NOTE**: This is needed because **UserLAnd** doesn't maintain correct ownership/permissions of file:
+`/opt/visual-studio-code/chrome-sandbox`
 * Install SdkMan:
   * `curl -s "https://get.sdkman.io" | bash`
 * Install Maven:
@@ -34,15 +47,6 @@ How to set up a Java development environment on an Android phone
     * pubring.gpg
   * ~/.gradle/
     * gradle.properties
-* Install developer tools:
-  * `sudo pacman -S base-devel glibc`
-* Install `fakeroot-tcp`:
-  * Add Arch4Edu repository: 
-    * https://github.com/arch4edu/arch4edu/wiki/Add-arch4edu-to-your-Archlinux
-  * `sudo pacman -Sy fakeroot-tcp`
-* Install `yay` package manager:
-  * NOTE: This package must be built locally, because no one appears to have published it for the `aarch64` architecture.
-  * https://github.com/Jguer/yay#source
 * JDK11, JDK8:
   * `sudo pacman -S jdk11-openjdk`
   * `sudo pacman -S jdk8-openjdk`
@@ -101,13 +105,8 @@ How to set up a Java development environment on an Android phone
   * `make install`
 * Install **Firefox** and its driver:
   * `sudo pacman -S firefox geckodriver`
-* Open Firefox and download **Eclipse Installer**
+* Open Firefox
   * `dbus-run-session -- firefox`
-* Extract Eclipse Installer and run it to install **Eclipse** 
-  * Install the TestNG plug-in, but not the optional Maven integration
-* Install **Visual Studio Code** via `yay`:
-  * `su scoba`
-  * `yay -S visual-studio-code-bin`
 
 
 * Clone the Selenium Foundation repository:

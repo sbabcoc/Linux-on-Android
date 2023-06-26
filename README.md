@@ -30,7 +30,7 @@ How to set up a Java development environment on an Android phone
     * `nano .config/code-flags.conf`
     * `--no-sandbox`
     * `--user-data-dir=/home/userland/.vscode-data`
-    * Type `&lt;ctrl-x&gt;y&lt;enter&gt;`
+    * Type `<ctrl-x>y<enter>`
     * **NOTE**: This is needed because **UserLAnd** doesn't maintain correct ownership/permissions of file:  
 `/opt/visual-studio-code/chrome-sandbox`
 * Install SdkMan:

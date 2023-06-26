@@ -31,7 +31,7 @@ How to set up a Java development environment on an Android phone
     * `--no-sandbox`
     * `--user-data-dir=/home/userland/.vscode-data`
     * Type `&lt;ctrl-x&gt;y&lt;enter&gt;`
-    * **NOTE**: This is needed because **UserLAnd** doesn't maintain correct ownership/permissions of file:
+    * **NOTE**: This is needed because **UserLAnd** doesn't maintain correct ownership/permissions of file:  
 `/opt/visual-studio-code/chrome-sandbox`
 * Install SdkMan:
   * `curl -s "https://get.sdkman.io" | bash`

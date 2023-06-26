@@ -33,6 +33,21 @@ How to set up a Java development environment on an Android phone
     * Type `<ctrl-x>y<enter>`
     * **NOTE**: This is needed because **UserLAnd** doesn't maintain correct ownership/permissions of file:  
 `/opt/visual-studio-code/chrome-sandbox`
+* Set editor, difftool and mergetool for `git`:
+  * `git config --global core.editor nano`
+  * `git config --global -e`
+```
+[core]
+  editor = code --wait
+[diff]
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+  tool = vscode
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
+```
 * Install SdkMan:
   * `curl -s "https://get.sdkman.io" | bash`
 * Install Maven:

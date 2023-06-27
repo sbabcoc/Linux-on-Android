@@ -10,7 +10,7 @@ How to set up a Java development environment on an Android phone
   * `cp /usr/share/X11/twm/system.twmrc .twmrc`
   * `nano .twmrc`
   * Move insertion point down to the blank line following the first set of options
-  * Type `RandomPlacement<return>`
+  * Add line: `RandomPlacement`
   * Type `<ctrl-x>y<enter>` to save changes and exit
   * **NOTE**: This change eliminates the step of "placing" applications at launch
 * Update package registry:
@@ -35,8 +35,8 @@ How to set up a Java development environment on an Android phone
   * `yay -S visual-studio-code-bin`
   * Create `code-flags.conf` file:
     * `nano .config/code-flags.conf`
-    * Type `--no-sandbox<return>`
-    * Type `--user-data-dir=/home/userland/.vscode-data<return>`
+    * Add line: `--no-sandbox`
+    * Add line: `--user-data-dir=/home/userland/.vscode-data`
     * Type `<ctrl-x>y<enter>` to save changes and exit
     * **NOTE**: This is needed because **UserLAnd** doesn't maintain correct ownership/permissions of file:  
 `/opt/visual-studio-code/chrome-sandbox`

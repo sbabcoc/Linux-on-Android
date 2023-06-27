@@ -114,7 +114,10 @@ How to set up a Java development environment on an Android phone
   * `chmod +x bazelisk`
   * `mv bazelisk /usr/sbin/bazelisk`
 * Install `buildifier`:
-  * `go install github.com/bazelbuild/buildtools/buildifier@latest`
+  * `wget https://github.com/bazelbuild/buildtools/releases/download/v6.1.2/buildifier-linux-arm64`
+  * `mv buildifier-linux-arm64 buildifier`
+  * `chmod +x buildifier`
+  * `mv buildifier /usr/sbin/buildifier`
 * Install `jed` editor:
   * NOTE: This package must be built locally, because no one appears to have published it for the `aarch64` architecture.
   * `sudo pacman -S slang libxt`

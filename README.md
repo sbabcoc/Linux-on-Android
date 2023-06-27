@@ -6,6 +6,13 @@ How to set up a Java development environment on an Android phone
 * Install **CodeBoard** (on-screen keyboard)
 * Install **UserLAnd** from Play Store
 * Launch **UserLAnd** and open Arch Linux (graphical interface)
+* Set random placement option of TWM:
+  * `cp /usr/share/X11/twm/system.twmrc .twmrc`
+  * `nano .twmrc`
+  * Move insertion point down to the blank line following the first set of options
+  * Type `RandomPlacement<return>`
+  * Type `<ctrl-x>y<enter>` to save changes and exit
+  * **NOTE**: This change eliminates the step of "placing" applications at launch
 * Update package registry:
   * `sudo pacman -Syu`
 * Install developer tools:
@@ -30,7 +37,7 @@ How to set up a Java development environment on an Android phone
     * `nano .config/code-flags.conf`
     * Type `--no-sandbox<return>`
     * Type `--user-data-dir=/home/userland/.vscode-data<return>`
-    * Type `<ctrl-x>y<enter>`
+    * Type `<ctrl-x>y<enter>` to save changes and exit
     * **NOTE**: This is needed because **UserLAnd** doesn't maintain correct ownership/permissions of file:  
 `/opt/visual-studio-code/chrome-sandbox`
 * Set editor, difftool and mergetool for `git`:

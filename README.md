@@ -122,9 +122,9 @@ How to set up a Java development environment on an Android phone
   * `sudo pacman -S firefox geckodriver`
 * Disable Firefox sandboxing in `.bashrc`:
   * `~/.bashrc`
-```
-export MOZ_FAKE_NO_SANDBOX=1
-```
+  ```
+    export MOZ_FAKE_NO_SANDBOX=1
+  ```
 * Open Firefox
   * `dbus-run-session -- firefox`
 

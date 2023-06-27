@@ -120,6 +120,11 @@ How to set up a Java development environment on an Android phone
   * `make install`
 * Install **Firefox** and its driver:
   * `sudo pacman -S firefox geckodriver`
+* Disable Firefox sandboxing in `.bashrc`:
+  * `~/.bashrc`
+```
+export MOZ_FAKE_NO_SANDBOX=1
+```
 * Open Firefox
   * `dbus-run-session -- firefox`
 

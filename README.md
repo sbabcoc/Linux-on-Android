@@ -1,7 +1,93 @@
 # Linux-on-Android
 How to set up a Java development environment on an Android phone
 
-## Revised installation
+## Revised installation (Mar 28, 2026)
+
+* Install **Unexpected Keyboard** (on-screen keyboard)
+* Install **Termux** from [F-Droid](https://wiki.termux.com/wiki/Installing_from_F-Droid)
+* Install **Debian**  
+  1. Update and Install Proot-Distro  
+     Open Termux and run the following commands to ensure everything is current and to install the tool that manages Linux distributions:  
+     ``` bash
+     pkg update && pkg upgrade -y
+     pkg install proot-distro
+     ```
+  2. Install Debian  
+     Install the Debian distribution using the following command:  
+     ``bash
+     proot-distro install debian
+     ```
+  3. Login and Use Debian  
+     Log in to the newly installed Debian container:  
+     ```bash
+     proot-distro login debian
+     ```
+     _You are now in a Debian shell, appearing as root._
+  4. Initial Setup (Inside Debian)  
+     It is highly recommended to update packages and add a regular user for security:  
+     ```bash
+     apt update && apt upgrade -y
+     apt install sudo nano adduser
+     # Add a new user (replace 'username' with your preferred name)
+     adduser username
+     # Grant sudo permissions
+     echo 'username ALL=(ALL:ALL) ALL' > /etc/sudoers.d/username
+     chmod 0440 /etc/sudoers.d/username
+     ```
+(Optional) Install a Desktop Environment (XFCE4) 
+If you need a graphical interface, you can install XFCE4 within the proot environment: 
+Install XFCE4: apt install xfce4 xfce4-goodies dbus-x11 -y
+To run it, you will need to install Termux:X11 and set up a VNC server or X11 forwarding. 
+Reddit
+Reddit
+ +3
+
+* Install **Termux:X11**:  
+  To install Termux:X11, you need to install two separate components: the **Termux:X11** Android app (APK) and the companion Termux package. The installation requires Android 8 or later.
+  * **Step 1: Install the Termux:X11 Android App (APK)**  
+    The app is not available on the Google Play Store (which has outdated Termux versions). Instead, download the APK from the official GitHub repository's nightly releases. 
+    * Go to the [Termux:X11 releases](https://github.com/termux/termux-x11/releases) page on **GitHub**.
+    * Download the `app-$ARCHITECTURE-debug.apk` file that matches your device's CPU architecture.
+      * If you are unsure of your device's architecture, you can download the app-universal-debug.apk file, which is compatible with most devices but uses slightly more storage.
+      * Install the downloaded APK file. You may need to grant permission to install apps from unknown sources in your device's settings.
+      * 
+  * **Step 2: Install the companion package in the Termux terminal**  
+    Once the APK is installed, open the main Termux app and run the following commands to enable the X11 repository and install the necessary package:
+    * Update/upgrade Termux:
+      ```bash
+      pkg update && pkg upgrade -y
+      ```
+    * Enable the X11 repository:  
+      ```bash
+      pkg install x11-repo
+      ```
+    * Install the companion package:  
+      ```bash
+      pkg install termux-x11-nightly
+      ```
+
+  
+      
+  * **Step 4: Run Termux:X11**  
+    You are now ready to use Termux:X11.
+    1. First, launch the Termux:X11 Android app from your app drawer. A blank screen will appear, indicating the server is running.
+    2. Switch back to the Termux terminal.
+    3. Install the `nano` editor:
+       ```bash
+       pkg install nano
+       ```
+    4.
+      and run the following command to start your session (using XFCE as an example):
+      ```bash
+      termux-x11 :1 -xstartup "dbus-launch --exit-with-session xfce4-session"
+      ```
+This command starts the X server on display :1 and launches the XFCE session.
+Switch back to the Termux:X11 app to see your running graphical environment. 
+Troubleshooting Notes:
+If you only see a black screen, you might need to pass the -legacy-drawing option to the startup command: termux-x11 :1 -legacy-drawing -xstartup "xfce4-session".
+You can set the TERMUX_X11_XSTARTUP environment variable in your ~/.bashrc file to avoid typing the full -xstartup command every time.
+
+## Revised installation (Jun 26, 2023)
 
 * Install **CodeBoard** (on-screen keyboard)
 * Install **UserLAnd** from Play Store

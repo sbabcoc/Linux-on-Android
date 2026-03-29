@@ -14,7 +14,7 @@ How to set up a Java development environment on an Android phone
      ```
   2. **Install Debian**  
      Install the Debian distribution using the following command:  
-     ``bash
+     ```bash
      proot-distro install debian
      ```
   3. **Login and Use Debian**  
@@ -34,14 +34,11 @@ How to set up a Java development environment on an Android phone
      echo 'username ALL=(ALL:ALL) ALL' > /etc/sudoers.d/username
      chmod 0440 /etc/sudoers.d/username
      ```
-(Optional) Install a Desktop Environment (XFCE4) 
-If you need a graphical interface, you can install XFCE4 within the proot environment: 
-Install XFCE4: apt install xfce4 xfce4-goodies dbus-x11 -y
-To run it, you will need to install Termux:X11 and set up a VNC server or X11 forwarding. 
-Reddit
-Reddit
- +3
-
+  5. **Install XFCE4 Desktop Environment**  
+     Install XFCE4 within the proot environment:  
+     ```bash
+     apt install xfce4 xfce4-goodies dbus-x11 -y
+     ```
 * Install **Termux:X11**:  
   To install Termux:X11, you need to install two separate components: the **Termux:X11** Android app (APK) and the companion Termux package. The installation requires Android 8 or later.
   * **Step 1: Install the Termux:X11 Android App (APK)**  

@@ -5,6 +5,29 @@ How to set up a Java development environment on an Android phone
 
 * Install **Unexpected Keyboard** (on-screen keyboard)
 * Install **Termux** from [F-Droid](https://wiki.termux.com/wiki/Installing_from_F-Droid)
+* Install **Termux:X11**:  
+  To install Termux:X11, you need to install two separate components: the **Termux:X11** Android app (APK) and the companion Termux package. The installation requires Android 8 or later.
+  * **Step 1: Install the Termux:X11 Android App (APK)**  
+    The app is not available on the Google Play Store (which has outdated Termux versions). Instead, download the APK from the official GitHub repository's nightly releases. 
+    * Go to the [Termux:X11 releases](https://github.com/termux/termux-x11/releases) page on **GitHub**.
+    * Download the `app-$ARCHITECTURE-debug.apk` file that matches your device's CPU architecture.
+      * If you are unsure of your device's architecture, you can download the app-universal-debug.apk file, which is compatible with most devices but uses slightly more storage.
+      * Install the downloaded APK file. You may need to grant permission to install apps from unknown sources in your device's settings.
+      * 
+  * **Step 2: Install the companion package in the Termux terminal**  
+    Once the APK is installed, open the main Termux app and run the following commands to enable the X11 repository and install the necessary package:
+    * Update/upgrade Termux:
+      ```bash
+      pkg update && pkg upgrade -y
+      ```
+    * Enable the X11 repository:  
+      ```bash
+      pkg install x11-repo
+      ```
+    * Install the companion package:  
+      ```bash
+      pkg install termux-x11-nightly
+      ```
 * Install **Debian**  
   1. **Update and Install Proot-Distro**  
      Open Termux and run the following commands to ensure everything is current and to install the tool that manages Linux distributions:  
@@ -39,32 +62,19 @@ How to set up a Java development environment on an Android phone
      ```bash
      apt install xfce4 xfce4-goodies dbus-x11 -y
      ```
-* Install **Termux:X11**:  
-  To install Termux:X11, you need to install two separate components: the **Termux:X11** Android app (APK) and the companion Termux package. The installation requires Android 8 or later.
-  * **Step 1: Install the Termux:X11 Android App (APK)**  
-    The app is not available on the Google Play Store (which has outdated Termux versions). Instead, download the APK from the official GitHub repository's nightly releases. 
-    * Go to the [Termux:X11 releases](https://github.com/termux/termux-x11/releases) page on **GitHub**.
-    * Download the `app-$ARCHITECTURE-debug.apk` file that matches your device's CPU architecture.
-      * If you are unsure of your device's architecture, you can download the app-universal-debug.apk file, which is compatible with most devices but uses slightly more storage.
-      * Install the downloaded APK file. You may need to grant permission to install apps from unknown sources in your device's settings.
-      * 
-  * **Step 2: Install the companion package in the Termux terminal**  
-    Once the APK is installed, open the main Termux app and run the following commands to enable the X11 repository and install the necessary package:
-    * Update/upgrade Termux:
-      ```bash
-      pkg update && pkg upgrade -y
-      ```
-    * Enable the X11 repository:  
-      ```bash
-      pkg install x11-repo
-      ```
-    * Install the companion package:  
-      ```bash
-      pkg install termux-x11-nightly
-      ```
-
-  
-      
+  6. **Add XFCE4 Configuration**  
+     Use `nano` to append **XFCE4** configuration to `.bashrc`:
+     ```bash
+     export MOZ_DISABLE_CONTENT_SANDBOX=1
+     export XDG_RUNTIME_DIR=/tmp/runtime-root
+     mkdir -p $XDG_RUNTIME_DIR
+     export DISPLAY=:0
+     ```
+  7. **Switch to Regular User Account**
+     ```bash
+     su - username # replace 'username' with regular user name
+     ```
+     
   * **Step 4: Run Termux:X11**  
     You are now ready to use Termux:X11.
     1. First, launch the Termux:X11 Android app from your app drawer. A blank screen will appear, indicating the server is running.

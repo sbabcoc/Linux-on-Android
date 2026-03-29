@@ -6,24 +6,24 @@ How to set up a Java development environment on an Android phone
 * Install **Unexpected Keyboard** (on-screen keyboard)
 * Install **Termux** from [F-Droid](https://wiki.termux.com/wiki/Installing_from_F-Droid)
 * Install **Debian**  
-  1. Update and Install Proot-Distro  
+  1. **Update and Install Proot-Distro**  
      Open Termux and run the following commands to ensure everything is current and to install the tool that manages Linux distributions:  
      ``` bash
      pkg update && pkg upgrade -y
      pkg install proot-distro
      ```
-  2. Install Debian  
+  2. **Install Debian**  
      Install the Debian distribution using the following command:  
      ``bash
      proot-distro install debian
      ```
-  3. Login and Use Debian  
+  3. **Login and Use Debian**  
      Log in to the newly installed Debian container:  
      ```bash
      proot-distro login debian
      ```
      _You are now in a Debian shell, appearing as root._
-  4. Initial Setup (Inside Debian)  
+  4. **Initial Setup (Inside Debian)**  
      It is highly recommended to update packages and add a regular user for security:  
      ```bash
      apt update && apt upgrade -y

@@ -66,7 +66,7 @@ How to set up a Java development environment on an Android phone
   * Add Configuration for  `root` Account:  
     Append configuration to `.bashrc`:
     ```bash
-    cat <<EOF >> .bashrc
+    cat <<'EOF' >> .bashrc
     export DISPLAY=:0
     export XDG_CURRENT_DESKTOP=XFCE
     export XDG_RUNTIME_DIR=/tmp/runtime-root
@@ -117,7 +117,7 @@ How to set up a Java development environment on an Android phone
        ```
     2. Create script to launch **XFCE4**:
        ```bash
-       cat <<EOF > ~/.local/bin/start-xfce
+       cat <<'EOF' > ~/.local/bin/start-xfce
        #!/bin/bash
        export DISPLAY=:0
        unset WAYLAND_DISPLAY
@@ -143,7 +143,7 @@ How to set up a Java development environment on an Android phone
        ```
     3. Create wrapper script for **Visual Studio Code**:
        ```bash
-       cat <<EOF > ~/.local/bin/code-proot
+       cat <<'EOF' > ~/.local/bin/code-proot
        #!/bin/bash
        export DISPLAY=:0
        unset WAYLAND_DISPLAY
@@ -154,13 +154,13 @@ How to set up a Java development environment on an Android phone
            chmod 700 "$XDG_RUNTIME_DIR"
        fi
        
-       exec code --no-sandbox --disable-gpu "$@”
+       exec code --no-sandbox --disable-gpu "$@"
        EOF
        chmod +x ~/.local/bin/code-proot
        ```
     4. Create wrapper for **Mozilla Firefox**:
        ```bash
-       cat <<EOF > ~/.local/bin/firefox-proot
+       cat <<'EOF' > ~/.local/bin/firefox-proot
        #!/bin/bash
        export DISPLAY=:0
        unset WAYLAND_DISPLAY
@@ -180,7 +180,7 @@ How to set up a Java development environment on an Android phone
        fi
        
        # --- Launch Firefox ---
-       exec firefox "$@”
+       exec firefox "$@"
        EOF
        chmod +x ~/.local/bin/firefox-proot
        ```
@@ -197,7 +197,7 @@ How to set up a Java development environment on an Android phone
     ```bash
     apt install curl zip unzip -y
     curl -s "https://get.sdkman.io" | bash
-    source "$HOME/.sdkman/bin/sdkman-init.sh”
+    source "$HOME/.sdkman/bin/sdkman-init.sh"
     ```
   * Install **Visual Studio Code**:
     1. Update your package index and install dependencies:
@@ -223,7 +223,7 @@ How to set up a Java development environment on an Android phone
        ```
     6. Define `git` configiration:
        ```bash
-       cat <<EOF > ~/.gitconfig
+       cat <<'EOF' > ~/.gitconfig
        [core]
        	editor = code-proot --no-sandbox --wait
        [diff]
@@ -253,17 +253,16 @@ How to set up a Java development environment on an Android phone
 * Assemble **Debian/X11** Bootstrap:
   1. **Create a Termux X11 Configuration Script**:
      ```bash
-     cat <<EOF > ~/termux-x11-env.sh
-     #!/data/data/com.termux/files/usr/bin/bash
+     cat <<'EOF' > ~/termux-x11-env.sh
+     #!/data/data/com.termux/files/usr/bin/bash     
+     export DISPLAY=:0
+     export XDG_RUNTIME_DIR=$TMPDIR
      
      # Start X server if not running
      if ! pgrep -f termux-x11 >/dev/null; then
          termux-x11 :0 >/dev/null 2>&1 &
          sleep 1
      fi
-     
-     export DISPLAY=:0
-     export XDG_RUNTIME_DIR=$TMPDIR
      EOF
      chmod +x ~/termux-x11-env.sh
      ```

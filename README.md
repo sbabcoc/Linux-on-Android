@@ -281,8 +281,12 @@ How to set up a Java development environment on an Android phone
   ```bash
   ~/start-debian.sh
   ```
-  This command starts the **X** server on display :0 and launches the **XFCE** session.
-  Switch back to the **Termux:X11** app to see your running graphical environment.
+  This command starts the **X** server on display `:0`.
+* Launch the **XFCE** session:
+  ```bash
+  start-xfce
+  ```
+* Switch back to the **Termux:X11** app to see your running graphical environment.
 
 ### Step 4: Install Mozilla Firefox
   * Open a Terminal session from the Applications menu

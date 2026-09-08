@@ -272,6 +272,7 @@ How to set up a Java development environment on an Android phone
      #!/data/data/com.termux/files/usr/bin/bash
      source ~/termux-x11-env.sh
      proot-distro login debian --shared-tmp --user scoba
+     EOF
      chmod +x ~/start-debian.sh
      ```
 

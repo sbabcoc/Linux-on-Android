@@ -97,7 +97,6 @@ How to set up a Java development environment on an Android phone
     export LC_ALL=en_US.UTF-8
     
     export PATH="$PATH:$HOME/.local/bin"
-    export SE_MANAGER_PATH="$HOME/code/selenium/rust/target/debug/selenium-manager"
     
     export DISPLAY=:0
     export XDG_CURRENT_DESKTOP=XFCE

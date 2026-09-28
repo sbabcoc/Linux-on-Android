@@ -27,7 +27,16 @@ How to set up a Java development environment on an Android phone
       ```bash
       pkg install termux-x11-nightly
       ```
-
+  3. **Install PulseAudio server**
+    ```bash
+    pkg install pulseaudio
+    ```
+  4. **Add startup of audio server**
+    ```bash 
+    cat << 'EOF' >> ~/.bashrc
+    pulseaudio --check || pulseaudio --start --exit-idle-time=-1 --load="module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1"
+    EOF 
+    ```
 ### Step 2: Install and Configure Debian
   * Update and Install **Proot-Distro**:  
     Open Termux and run the following commands to ensure everything is current and to install the tool that manages Linux distributions:
@@ -51,7 +60,7 @@ How to set up a Java development environment on an Android phone
     ```bash
     echo "nameserver 8.8.8.8" > /etc/resolv.conf
     apt update && apt upgrade -y
-    apt install sudo nano adduser
+    apt install sudo nano adduser]
     # Add a new user (replace 'scoba' with your preferred name)
     adduser scoba
     # Grant sudo permissions
@@ -66,10 +75,11 @@ How to set up a Java development environment on an Android phone
   * Add Configuration for  `root` Account:  
     Append configuration to `.bashrc`:
     ```bash
-    cat <<'EOF' >> .bashrc
+    cat << 'EOF' >> .bashrc
     export DISPLAY=:0
     export XDG_CURRENT_DESKTOP=XFCE
     export XDG_RUNTIME_DIR=/tmp/runtime-root
+    export PULSE_SERVER=127.0.0.1
     if [ ! -d "$XDG_RUNTIME_DIR" ]; then
         mkdir -p "$XDG_RUNTIME_DIR"
         chmod 700 "$XDG_RUNTIME_DIR"
@@ -101,6 +111,7 @@ How to set up a Java development environment on an Android phone
     export DISPLAY=:0
     export XDG_CURRENT_DESKTOP=XFCE
     export XDG_RUNTIME_DIR=/tmp/runtime-scoba
+    export PULSE_SERVER=127.0.0.1
     if [ ! -d "$XDG_RUNTIME_DIR" ]; then
         mkdir -p "$XDG_RUNTIME_DIR"
         chmod 700 "$XDG_RUNTIME_DIR"
@@ -116,7 +127,7 @@ How to set up a Java development environment on an Android phone
        ```
     2. Create script to launch **XFCE4**:
        ```bash
-       cat <<'EOF' > ~/.local/bin/start-xfce
+       cat << 'EOF' > ~/.local/bin/start-xfce
        #!/bin/bash
        export DISPLAY=:0
        unset WAYLAND_DISPLAY
@@ -142,7 +153,7 @@ How to set up a Java development environment on an Android phone
        ```
     3. Create wrapper script for **Visual Studio Code**:
        ```bash
-       cat <<'EOF' > ~/.local/bin/code-proot
+       cat << 'EOF' > ~/.local/bin/code-proot
        #!/bin/bash
        export DISPLAY=:0
        unset WAYLAND_DISPLAY
@@ -159,7 +170,7 @@ How to set up a Java development environment on an Android phone
        ```
     4. Create wrapper for **Mozilla Firefox**:
        ```bash
-       cat <<'EOF' > ~/.local/bin/firefox-proot
+       cat << 'EOF' > ~/.local/bin/firefox-proot
        #!/bin/bash
        export DISPLAY=:0
        unset WAYLAND_DISPLAY
@@ -222,7 +233,7 @@ How to set up a Java development environment on an Android phone
        ```
     6. Define `git` configiration:
        ```bash
-       cat <<'EOF' > ~/.gitconfig
+       cat << 'EOF' > ~/.gitconfig
        [core]
        	editor = code-proot --no-sandbox --wait
        [diff]
@@ -252,7 +263,7 @@ How to set up a Java development environment on an Android phone
 * Assemble **Debian/X11** Bootstrap:
   1. **Create a Termux X11 Configuration Script**:
      ```bash
-     cat <<'EOF' > ~/termux-x11-env.sh
+     cat << 'EOF' > ~/termux-x11-env.sh
      #!/data/data/com.termux/files/usr/bin/bash     
      export DISPLAY=:0
      export XDG_RUNTIME_DIR=$TMPDIR
@@ -267,7 +278,7 @@ How to set up a Java development environment on an Android phone
      ```
   2. **Create a Debian Launch Script**:
      ```bash
-     cat <<EOF > ~/start-debian.sh
+     cat << 'EOF' > ~/start-debian.sh
      #!/data/data/com.termux/files/usr/bin/bash
      source ~/termux-x11-env.sh
      proot-distro login debian --shared-tmp --user scoba

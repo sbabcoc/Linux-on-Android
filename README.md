@@ -13,25 +13,30 @@ How to set up a Java development environment on an Android phone
     * Download the `app-$ARCHITECTURE-debug.apk` file that matches your device's CPU architecture.
       * If you are unsure of your device's architecture, you can download the app-universal-debug.apk file, which is compatible with most devices but uses slightly more storage.
       * Install the downloaded APK file. You may need to grant permission to install apps from unknown sources in your device's settings.
-  2. **Install the companion package in the Termux terminal**  
-    Once the APK is installed, open the main Termux app and run the following commands to enable the X11 repository and install the necessary package:
-    * Update/upgrade Termux:
+    Once the APK is installed, open the main Termux app and run the following commands:
+  2. **Sync repositories and update installed components**
       ```bash
       pkg update && pkg upgrade -y
       ```
+  3. **Install Termux shared storage access**
+      ```bash
+      termux-setup-storage
+      ```
+      Tap Allow on the Android permission prompt.
+  4. **Install the companion package in the Termux terminal**  
     * Enable the X11 repository:
       ```bash
       pkg install x11-repo
       ```
-    * Install the companion package:
+    * Install the companion packages:
       ```bash
       pkg install termux-x11-nightly
       ```
-  3. **Install PulseAudio server**
+  5. **Install PulseAudio server**
     ```bash
     pkg install pulseaudio
     ```
-  4. **Add startup of audio server**
+  6. **Add startup of audio server**
     ```bash 
     cat << 'EOF' >> ~/.bashrc
     pulseaudio --check || pulseaudio --start --exit-idle-time=-1 --load="module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1"

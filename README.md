@@ -22,7 +22,7 @@ How to set up a Java development environment on an Android phone
       ```bash
       termux-setup-storage
       ```
-      Tap Allow on the Android permission prompt.
+      Tap **Allow** on the Android permission prompt.
   4. **Install the companion package in the Termux terminal**  
     * Enable the X11 repository:
       ```bash
